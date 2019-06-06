@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Belgrano&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="styleprueba.css" />
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDKTOy14awz0b3xXLbAREZR9SsQYLDbTQg",
+    authDomain: "nuevo-intento-44e7d.firebaseapp.com",
+    databaseURL: "https://nuevo-intento-44e7d.firebaseio.com",
+    projectId: "nuevo-intento-44e7d",
+    storageBucket: "nuevo-intento-44e7d.appspot.com",
+    messagingSenderId: "295490069163",
+    appId: "1:295490069163:web:e8a6af5b487d7fb3"
+  };
+  // Initialize Firebase p
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+  <div>
+    <div id="containerWallHead"></div> 
+    <div id="containerWallCreate"></div> 
+    <div id="containerWallPost" class="containerWallPost"></div> 
+    <div id="containerWallFoot" ></div> 
+  </div>   
+
+  
+  
+  <div id="containerLogin"> 
+  
+  <h1>KETRAWE</h1>
+    <div id="ingreso">
+    <h4>Ingreso de usuaries</h4>
+    <input id="mail2" type="text" placeholder="Ingresa tu correo">
+    <input id= "contraseña2" type="password" placeholder="Ingresa tu contraseña">
+    <button id="ingresar" type="button">Acceder</button>
+    </div>
+    <div id="cerrar">
+    <button id="cerrar" type="button">Cerrar sesión</button>
+    </div>
+    </section>
+    <div id="contenido">
+    </div>
+    <div id="root"></div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app1.js"></script>
+    <script type="module" src="./nav.js"></script>
+
+    
+</body>
+</html>

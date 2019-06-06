@@ -1,0 +1,65 @@
+
+body{
+    background-image:url('http://wintablet.info/wp-content/uploads/2017/01/10f181fe73f9b5a7ee0be9eaac388562_mca-partners-with-growing-plant-growing-clipart_1917-1002.jpeg');
+    background-size: cover;
+}
+h1{
+    font-family: 'Headland One', serif;
+    font-size:70px;
+    color:rgba(224, 113, 9, 0.945);
+}
+h2 {
+    margin-left:100px;
+}
+h1{
+    font-family: 'Belgrano', serif;
+    font-size:70px;
+    margin-left:540px;
+}
+h4{
+    font-size:25px;
+}
+button{
+width: 232px;
+height: 43px;
+font-size:17px;
+margin-top:20px;
+background: rgba(156, 211, 64, 0.98);
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 22px;
+display:block;
+font-weight: bold;
+}
+#google{
+    width: 227px;
+    height: 33px;
+    background: rgba(196, 196, 196, 0.37);
+    border-radius: 20px;
+    font-weight: normal;
+    display:block;
+    background-image:url('./img/google.png');
+    background-position:25px;
+    background-repeat:no-repeat;
+    background-size:20px;
+    font-size:14px;
+}
+input{
+display:block;
+width: 225px;
+height: 36px;
+left: 60px;
+top: 281px;
+margin-top: 20px;
+background: rgba(196, 196, 196, 0.53);
+mix-blend-mode: normal;
+border: 1px solid rgba(0, 0, 0, 0.32);
+box-sizing: border-box;
+}
+#registro , #ingreso ,#cerrar{
+    display:none;
+}
+#root{
+margin-left:600px;
+margin-top:70px;
+}
