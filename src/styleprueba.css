@@ -287,3 +287,17 @@ html, body {
   background: url("http://3.bp.blogspot.com/_psUg7aC-dX0/TCeXjWYw9RI/AAAAAAAAATU/6ILZJq5M558/s1600/P1000202.JPG.jpeg");
   
 }
+.miVentana {
+  position: fixed;
+  width: 700px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  border: #333333 3px solid;
+  background-color: #FAFAFA;
+  color: #000000;
+  display: none;
+}

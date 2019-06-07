@@ -47,7 +47,8 @@ export const readPostFb = (containerWallPost) => {
    
         querySnapshot.forEach((doc) => {
              containerWallPost.innerHTML  += 
-                          
+
+    // -------------------ficha de comentarios----------------------                      
 `  <div class="movie_card" id="tomb" >
   <div class="info_section">
     <div class="movie_header"   >
@@ -66,9 +67,9 @@ export const readPostFb = (containerWallPost) => {
       <ul>
         <li><i class="material-icons">share</i></li>
         <li><i class="material-icons"></i></li>
-        <li  onclick="deletefb('hola coisa')"  ><i class="material-icons">delete</i></li>
-        <li><i class="material-icons">edit</i></li>
-        <li><i class="material-icons">chat_bubble</i></li>
+        <li><i id="deleteFb" data-id="${doc.id}"  class="material-icons">delete</i></li>
+        <li><i id="editPostFb" data-id="${doc.id}"  class="material-icons">edit</i></li>
+        <li><i class="material-icons">chat_bubble</i></li>    
       </ul>
     </div>
   </div>
@@ -83,10 +84,32 @@ export const readPostFb = (containerWallPost) => {
                       `);
         });  
    
-   
-        
+function deletePost() {
+  console.log("estoy dentro de borrar");
+  let id =  this.getAttribute("data-id");
+console.log("mi id " + id);
+  deletePostFb(id);
+}
+
+
+   document.getElementById("deleteFb").addEventListener("click", deletePost, false )
+    
+   function editPost() {
+    console.log("estoy dentro de editar");
+    let id =  this.getAttribute("data-id");
+    console.log("mi id " + id);
+    editPostFb(id);
+  }
+  
+  
+     document.getElementById("editPostFb").addEventListener("click", editPost, false )
+
+
+
     });
    
+
+    
 }
 
 
@@ -102,25 +125,26 @@ export const deletePostFb = (id)=>{
     });
 } 
 
+//-------------- Editar la publicacion-----------------------
 
+export const editPostFb = (id, titulo, descripcion, dateValue, likes)=>{  
+  console.log("id a editar es " +  id); 
+  let db = firebase.firestore();
+  
+let washingtonRef = db.collection("posts").doc(id);
 
-
-
-
-
-
-
-// //-------------- Editar la publicacion-----------------------
-// var washingtonRef = db.collection("posts").doc("DC");
-
-// // Set the "capital" field of the city 'DC'
-// return washingtonRef.update({
-//     capital: true
-// })
-// .then(function() {
-//     console.log("Document successfully updated!");
-// })
-// .catch(function(error) {
-//     // The document probably doesn't exist.
-//     console.error("Error updating document: ", error);
-// });
+// Set the "capital" field of the city 'DC'
+return washingtonRef.update({
+  titulo: titulo,
+  descripcion: descripcion,
+  likes: likes,
+  fecha: dateValue
+})
+.then(function() {
+    console.log("Document editado!");
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error al editar el document: ", error);
+});
+}

@@ -1,21 +1,19 @@
 import { templateHeadWall, templateFootWall } from './templateHFWall.js';
-import { createPostFb, readPostFb, deletePostFb  } from './../js/firebaseconexion.js';
+import { createPostFb, readPostFb, deletePostFb,  editPostFb } from './../js/firebaseconexion.js';
 
 
 export const templateWall = (containerWallHead, containerWallCreate, containerWallPost, containerWallFoot) => {
-    function deletefb (id) {
-        console.log("Dentro boton eliminar id " + id);
-    }   
-    
+
     containerWallHead.innerHTML = templateHeadWall(); 
- 
+
+ //------------------Modal--------------------------
     containerWallCreate.innerHTML = `
     <div>
     <div style="float:left"><img src="https://previews.123rf.com/images/yupiramos/yupiramos1711/yupiramos171106099/89521194-cute-avatar-perfil-de-la-ilustraci%C3%B3n-vectorial-dise%C3%B1o.jpg" width="100px" alt=""></div>
     <div style="float:left">
         <div class="descripcionPost"><textarea name="" id="toPost" class="toPost" cols="30" rows="10" placeholder="¿Qué  estás pensando?"></textarea></div>        
         <button id="createPost" type="button">Publicar</button>
-        <button id="deleted" type="button">Borrar</button>
+        <button id="clouseModal" type="button">Cerrar</button>
     </div>
     </div>   
     `;
@@ -29,6 +27,11 @@ export const templateWall = (containerWallHead, containerWallCreate, containerWa
     btnCreatePost.addEventListener('click', () => {
         console.log("publicando");
         createPostFb("", document.getElementById("toPost").value, "usuario1", containerWallPost);
+        var ventana = document.getElementById("miVentana");
+        // ventana.style.marginTop = 100 ;
+        ventana.style.left = ((document.body.clientWidth - 350) / 2);
+        // ventana.style.left = ((document.body.clientWidth - 350) / 2) + px;
+        ventana.style.display = "none";
     });
 
   //-----------Boton hamburguesa---------------------------
@@ -42,15 +45,30 @@ export const templateWall = (containerWallHead, containerWallCreate, containerWa
         }
         console.log("Dentro boton hambur");
     })
-// ----------------boton para pop-up publicar---------------
+// ----------------boton para publicar en modal---------------
     const btnPublish = document.getElementById("btpublish");
     btnPublish.addEventListener('click', () => {
         console.log("navbar publica");
-    });
+        // function mostrarVentana() {
+            console.log("estoy en la ventana");
+            var ventana = document.getElementById("miVentana");
+            // ventana.style.marginTop = 100 ;
+            ventana.style.left = ((document.body.clientWidth - 350) / 2);
+            // ventana.style.left = ((document.body.clientWidth - 350) / 2) + px;
+            ventana.style.display = "block";
+        });
+
+        const btnClouseModal = document.getElementById("clouseModal");
+        btnClouseModal.addEventListener('click', () => {
+    console.log("estoy cerrando el modal");
+    var ventana = document.getElementById("miVentana");
+    // ventana.style.marginTop = 100 ;
+    ventana.style.left = ((document.body.clientWidth - 350) / 2);
+    // ventana.style.left = ((document.body.clientWidth - 350) / 2) + px;
+    ventana.style.display = "none";
+}); 
 
 }
-
-
 
 
 

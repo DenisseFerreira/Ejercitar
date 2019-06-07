@@ -19,22 +19,25 @@
                     // ventana.style.left = ((document.body.clientWidth - 350) / 2) + px;
                     ventana.style.display = "block";
                 }
+
+                function cerrarVentana() {
+                    console.log("estoy cerrando la ventana");
+                    var ventana = document.getElementById("miVentana");
+                    // ventana.style.marginTop = 100 ;
+                    ventana.style.left = ((document.body.clientWidth - 350) / 2);
+                    // ventana.style.left = ((document.body.clientWidth - 350) / 2) + px;
+                    ventana.style.display = "none";
+                }
             </script>
 
         <button onclick="mostrarVentana()"  type="button" >Publicar</button>
 
 
- <div id="miVentana"
- style="position:fixed; width: 350px; height: 190px; top: 0; left: 0; 
-  font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 12px; 
-  font-weight: normal; border: #333333 3px solid; background-color: #FAFAFA;
-   color: #000000; display:none;">
+ <div id="miVentana" class="miVentana">
                     Aquí pones tu contenido web
+
+                    <button onclick="cerrarVentana()"  type="button" >Cerrar</button>
                                         </div>
-
-
-
-
 
             
 </body>
